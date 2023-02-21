@@ -1,0 +1,18 @@
+
+<mat-card>
+  <form [formGroup]="form" (submit)="onSubmit()">
+  <mat-card-content>
+    <ng-container *ngFor="let column of formColumns">
+            <mat-form-field appearance="fill" >
+                <mat-label>{{column}}</mat-label>
+                <input matInput [formControlName]="column" appUppercase name="{{column}}">
+                <!-- <mat-error *ngIf="isFieldInvalid(column)">{{getErrorMessage('name')}}</mat-error> -->
+              </mat-form-field>
+        </ng-container>
+      </mat-card-content>
+      <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="isFormInvalid()">Submit</button>
+      </mat-dialog-actions>
+    </form>
+  </mat-card>
