@@ -1,0 +1,11 @@
+
+<app-shared-read 
+[entity]="'heroes'" 
+[columns]="displayedColumns"
+[isLoadingData]="isLoading"
+[data]="heroesList | async"
+(onFilterValue)="applyFilter($event)"
+(onAddAction)="addForm($event)"
+(onEditAction)="editForm($event)"
+(onDeleteAction)="deleteMessage($event)"
+></app-shared-read>
